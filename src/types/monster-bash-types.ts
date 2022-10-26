@@ -41,3 +41,13 @@ export interface Gamemode {
 	minPointsPerMonster?: number;
 	maxPointsPerMonster?: number;
 }
+
+export interface ArmyItem {
+	monster: Monster;
+	count: number;
+}
+
+export interface Army {
+	name: string;
+	monsters: ArmyItem[];
+}

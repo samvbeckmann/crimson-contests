@@ -1,10 +1,11 @@
-import MonsterSelectionPane from './MonsterSelectionPane';
+import Header from '../../components/Header';
+import Builder from './Builder';
 
 export default function BuilderPage(): JSX.Element {
   return (
-    <div>
-      <h1>builder page</h1>
-      <MonsterSelectionPane />
+    <div className='bg-slate-100 h-screen flex flex-col overflow-hidden'>
+      <Header />
+      <Builder />
     </div>
   );
 }
