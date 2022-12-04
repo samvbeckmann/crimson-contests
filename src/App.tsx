@@ -4,6 +4,7 @@ import ArenaPage from './pages/arenas/ArenaPage';
 import BuilderPage from './pages/army-builder/BuilderPage';
 import LandingPage from './pages/landing/LandingPage';
 import AboutPage from './pages/about/AboutPage';
+import { useEffect } from 'react';
 
 const router = createBrowserRouter([
   {
@@ -36,5 +37,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function App(): JSX.Element {
+  useEffect(() => {
+    document.title = 'Monster Mania';
+  }, []);
+  
   return <RouterProvider router={router} />;
 }
