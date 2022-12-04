@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import MonsterIcon from '../../components/MonsterIcon';
 import { IconSize, MonsterIconType } from '../../types/monster-icon-types';
-import { useRef } from 'react';
 
 interface Props {
   icon: MonsterIconType;
@@ -10,8 +9,6 @@ interface Props {
 }
 
 export default function AnimatedMonsterIcon({ icon, offset, flipped }: Props): JSX.Element {
-  const nodeRef = useRef(null);
-
   const sizeClass = (() => {
     switch (icon.size) {
       case IconSize.HUGE:
@@ -28,7 +25,6 @@ export default function AnimatedMonsterIcon({ icon, offset, flipped }: Props): J
   })();
 
   return (
-    // <CSSTransition nodeRef={nodeRef} classNames="monster-icon" timeout={400} key={icon.name} appear>
     <MonsterIcon
       key={icon.name}
       Icon={icon.Icon}
@@ -42,6 +38,5 @@ export default function AnimatedMonsterIcon({ icon, offset, flipped }: Props): J
       fill="white"
       flip={flipped}
     />
-    // </CSSTransition>
   );
 }
