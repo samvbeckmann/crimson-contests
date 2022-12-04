@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0%;
+  }
+  100% { 
+    opacity: 100%;
+    transform: translateY(0%)
+  }
+}
+
+.animate-fly {
+  animation: fly ease-in-out 4s infinite;
+}
+
+.monster-icon-enter {
+  opacity: 0;
+  transform: translateY(4rem);
+}
+
+.monster-icon-active-enter {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 400ms;
+}
+
+.monster-icon-exit {
+  opacity: 1;
+}
+
+.monster-icon-active-exit {
+  opacity: 0;
+  transform: translateY(-4rem);
+  transition: opacity 200ms, transform 400ms;
+}

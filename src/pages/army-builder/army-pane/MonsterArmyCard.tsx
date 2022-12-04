@@ -1,5 +1,5 @@
-import { ArmyItem, Monster } from '../../types/monster-bash-types';
-import { getMonsterCost, getMonsterCrDisplay } from '../../utils/army-utils';
+import { ArmyItem, Monster } from '../../../types/monster-bash-types';
+import { getMonsterCost, getMonsterCrDisplay } from '../../../utils/army-utils';
 import StackingBottomCards from './StackingBottomCards';
 
 interface Props {
@@ -16,7 +16,10 @@ export default function ({ monster, onIncrementMonster, onDecrementMonster }: Pr
           <span className="font-bold text-lg">
             {monster.monster.name} {monster.monster.isCaptain && <i className="fa-solid fa-crown"></i>}
           </span>
-          <span className="text-sm text-slate-700">CR {getMonsterCrDisplay(monster.monster.cr)} - {getMonsterCost(monster.monster).toLocaleString()} points each</span>
+          <span className="text-sm text-slate-700">
+            CR {getMonsterCrDisplay(monster.monster.cr)} - {getMonsterCost(monster.monster).toLocaleString()} points
+            each{monster.monster.pointCostOverride !== undefined ? '*' : ''}
+          </span>
         </div>
         <div className="flex flex-col text-slate-700 items-center">
           <span className="text-3xl font-medium">{monster.count}x</span>

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { EXAMPLE_ARMY_NAMES } from '../../resources/example-army-names';
 import { sample } from 'lodash';
+import { EXAMPLE_ARMY_NAMES } from '../../../resources/example-army-names';
 
 interface Props {
   armyName: string;

@@ -9,4 +9,5 @@ export const EXAMPLE_ARMY_NAMES = [
   'It was an Undead Smash',
   'Dragon Drama',
   'Mine Flayers',
+  'Definitely not Mimics'
 ];

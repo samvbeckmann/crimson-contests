@@ -1,4 +1,4 @@
-import { Army, Monster } from '../../types/monster-bash-types';
+import { Army, Monster } from '../../../types/monster-bash-types';
 import MonsterArmyCard from './MonsterArmyCard';
 
 interface Props {

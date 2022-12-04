@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ArenaPage from './pages/arenas/ArenaPage';
 import BuilderPage from './pages/army-builder/BuilderPage';
 import LandingPage from './pages/landing/LandingPage';
 
@@ -8,9 +9,15 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
-    path: '/builder',
-    element: <BuilderPage />,
-  },
+    path: '/monster-mania',
+    children: [{
+      path: 'builder',
+      element: <BuilderPage />, 
+    },   {
+      path: 'arenas',
+      element: <ArenaPage />
+    }]
+  }
 ]);
 
 export default function App(): JSX.Element {

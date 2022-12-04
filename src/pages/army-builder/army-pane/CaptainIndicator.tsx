@@ -1,5 +1,5 @@
-import { Army, CaptainMode, Gamemode } from '../../types/monster-bash-types';
 import { clsx } from 'clsx';
+import { Army, CaptainMode, Gamemode } from '../../../types/monster-bash-types';
 
 interface Props {
   gamemode: Gamemode;

@@ -1,8 +1,8 @@
-import { Gamemode } from '../../types/monster-bash-types';
 import { Listbox, Transition } from '@headlessui/react';
-import { GAMEMODES } from '../../resources/gamemodes';
-import { Fragment } from 'react';
 import { clsx } from 'clsx';
+import { Fragment } from 'react';
+import { GAMEMODES } from '../../../resources/gamemodes';
+import { Gamemode } from '../../../types/monster-bash-types';
 
 interface Props {
   gamemode: Gamemode;
@@ -11,8 +11,8 @@ interface Props {
 
 export default function GamemodeSelect({ gamemode, onChange }: Props): JSX.Element {
   return (
-    <div className='relative w-full'>
-      <span className='uppercase text-xs tracking-wide font-medium text-slate-700'>Select Gamemode</span>
+    <div className="relative w-full">
+      <span className="uppercase text-xs tracking-wide font-medium text-slate-700">Rules of Engagement</span>
       <Listbox value={gamemode} onChange={onChange}>
         <Listbox.Button className="relative w-full rounded bg-white py-2 pl-3 pr-10 text-left border-2">
           {gamemode.name}
@@ -38,7 +38,7 @@ export default function GamemodeSelect({ gamemode, onChange }: Props): JSX.Eleme
               'ring-black',
               'ring-opacity-5',
               'focus:outline-none',
-              'sm:text-sm',
+              'sm:text-sm'
             )}
           >
             {GAMEMODES.map((gamemode) => (
@@ -47,26 +47,28 @@ export default function GamemodeSelect({ gamemode, onChange }: Props): JSX.Eleme
                 value={gamemode}
                 className={({ active }) =>
                   `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                    active ? 'bg-red-100 text-red-900' : 'text-gray-900'
+                    active ? 'bg-orange-100 text-orange-900' : 'text-slate-900'
                   }`
                 }
               >
                 {({ selected }) => (
-                    <>
-                      <span
-                        className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
-                        }`}
-                      >
+                  <>
+                    <div className="flex flex-col">
+                      <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
                         {gamemode.name}
                       </span>
-                      {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-red-600">
-                          <i className="fa-solid fa-check"></i>
-                        </span>
-                      ) : null}
-                    </>
-                  )}
+                      <span className={clsx('text-xs', 'text-slate-600', 'active:text-orange-600')}>
+                        {gamemode.armyPoints.toLocaleString()} points
+                      </span>
+                    </div>
+
+                    {selected ? (
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-red-600">
+                        <i className="fa-solid fa-check"></i>
+                      </span>
+                    ) : null}
+                  </>
+                )}
               </Listbox.Option>
             ))}
           </Listbox.Options>

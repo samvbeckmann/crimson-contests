@@ -1,9 +1,9 @@
-import { Army, Gamemode, Monster } from '../../types/monster-bash-types';
+import { Army, Gamemode, Monster } from '../../../types/monster-bash-types';
+import ArmyNameEntry from './ArmyNameEntry';
+import ArmyOptionsRow from './ArmyOptionsRow';
 import BuilderHeader from './BuilderHeader';
 import CurrentArmyDisplay from './CurrentArmyDisplay';
 import GamemodeSelect from './GamemodeSelect';
-import ArmyNameEntry from './ArmyNameEntry';
-import ArmyOptionsRow from './ArmyOptionsRow';
 
 interface Props {
   army: Army;

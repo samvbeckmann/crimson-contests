@@ -1,6 +1,6 @@
-import Fraction from '../../components/Fraction';
-import { Army, Gamemode } from '../../types/monster-bash-types';
-import { getArmyPoints, getMonsterCost, getMonsterCount } from '../../utils/army-utils';
+import Fraction from '../../../components/Fraction';
+import { Army, Gamemode } from '../../../types/monster-bash-types';
+import { getArmyPoints, getMonsterCount } from '../../../utils/army-utils';
 import CaptainIndicator from './CaptainIndicator';
 
 interface Props {

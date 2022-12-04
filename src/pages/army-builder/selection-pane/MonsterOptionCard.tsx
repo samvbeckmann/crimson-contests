@@ -1,6 +1,6 @@
-import { Monster } from '../../types/monster-bash-types';
-import { getMonsterCost, getMonsterCrDisplay } from '../../utils/army-utils';
 import { clsx } from 'clsx';
+import { Monster } from '../../../types/monster-bash-types';
+import { getMonsterCost, getMonsterCrDisplay } from '../../../utils/army-utils';
 
 interface Props {
   monster: Monster;
@@ -16,6 +16,7 @@ export default function MonsterOptionCard({ monster, addMonster }: Props): JSX.E
         </p>
         <p className="text-sm text-slate-500">
           CR {getMonsterCrDisplay(monster.cr)} - {`${getMonsterCost(monster).toLocaleString()} points`}
+          {monster.pointCostOverride !== undefined ? '*' : ''}
         </p>
       </div>
       <button onClick={() => addMonster(monster)} className={clsx('hover:text-red-700 transition-colors')}>

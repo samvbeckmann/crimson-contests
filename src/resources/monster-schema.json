@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "monsters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "cr": { "type": "number" },
+          "pointCostOverride": { "type": "number" },
+          "link": { "type": "string" },
+          "banned": { "type": "boolean" },
+          "isCaptain": { "type": "boolean" },
+          "note": { "type": "string" }
+        },
+        "required": ["name", "cr"],
+				"additionalProperties": false
+      }
+    }
+  },
+  "required": ["monsters"]
+}

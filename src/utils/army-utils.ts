@@ -1,12 +1,11 @@
 import { CR_POINT_MAPPING, OTHER_POINT_VALUE } from '../resources/cr-mapping';
 import { Army, Monster } from '../types/monster-bash-types';
-import { get } from 'lodash';
 
 export const getMonsterCost = (monster: Monster): number => {
   if (monster.pointCostOverride !== undefined) {
     return Math.floor(monster.pointCostOverride);
   } else {
-    return get(CR_POINT_MAPPING, monster.cr, OTHER_POINT_VALUE);
+    return CR_POINT_MAPPING.find((item) => item.cr === monster.cr)?.points || OTHER_POINT_VALUE;
   }
 };
 
