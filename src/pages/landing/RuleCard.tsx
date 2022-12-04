@@ -16,7 +16,7 @@ export default function ({ rules, className }: Props): JSX.Element {
         </div>
         <div>{rules.note}</div>
       </div>
-      <div className={clsx('grid', 'grid-cols-2', 'gap-2 p-4')}>
+      <div className={clsx('grid', 'gric-cols-1', 'md:grid-cols-2', 'gap-2 p-4')}>
         {rules.exampleArmy.map((combatant) => (
           <div
             className={clsx(

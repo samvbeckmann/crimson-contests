@@ -31,7 +31,7 @@ export default function MonsterInspector(): JSX.Element {
         'shrink-0'
       )}
     >
-      <div className="mb-4 flex justify-between items-start">
+      <div className="mb-4 flex flex-col lg:flex-row gap-4 justify-between items-start">
         <div
           className={clsx(
             'font-mono font-bold text-slate-400 tracking-wide',
@@ -61,7 +61,7 @@ export default function MonsterInspector(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid grid-cols-10 gap-4">
+      <div className="grid grid-cols-5 lg:grid-cols-10 gap-4">
         {MONSTER_ICON_LIST.map((monster) => (
           <div
             onMouseEnter={() => setHoveredMonster(monster)}

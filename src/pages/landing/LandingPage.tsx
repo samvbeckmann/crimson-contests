@@ -7,14 +7,14 @@ import Goblin from '../../resources/svgs/Goblin';
 import Hydra from '../../resources/svgs/Hydra';
 import Kobold from '../../resources/svgs/Kobold';
 import MindFlayer from '../../resources/svgs/MindFlayer';
-import LandingPageSection from './LandingPageSection';
 import MonsterAnimation from './MonsterAnimation';
-import StyledLandingPageLink from './StyledLandingPageLink';
 import Testimonial from './Testimonial';
 import MonsterInspector from './MonsterInspector';
 import MonsterIcon from '../../components/MonsterIcon';
 import RuleCard from './RuleCard';
 import { GAMEMODES } from '../../resources/gamemodes';
+import ArenaPreview from './ArenaPreview';
+import Succubus from '../../resources/svgs/Succubus';
 
 export default function LandingPage(): JSX.Element {
   return (
@@ -89,7 +89,7 @@ export default function LandingPage(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-4xl mx-auto my-12">
         <Testimonial
           Icon={Beholder}
           name="The Xanathar"
@@ -120,8 +120,8 @@ export default function LandingPage(): JSX.Element {
         />
       </div>
 
-      <div className="w-full py-8 bg-slate-100">
-        <div className="max-w-3xl mx-auto">
+      <div className="w-full py-12 bg-slate-100">
+        <div className="max-w-3xl mx-auto px-4">
           <div className="flex flex-col gap-4">
             <div className="text-3xl font-bold">Choose Your Fighters</div>
             <div className="text-lg">
@@ -134,7 +134,7 @@ export default function LandingPage(): JSX.Element {
         </div>
       </div>
 
-      <div className="w-full py-8">
+      <div className="w-full py-12">
         <div className="mx-auto max-w-4xl grid grid-cols-2 items-stretch gap-8">
           <RuleCard rules={GAMEMODES[1]} className="bg-gradient-to-br from-orange-500 to-red-500" />
           <div className="flex flex-col gap-4 basis-1/2">
@@ -150,34 +150,90 @@ export default function LandingPage(): JSX.Element {
         </div>
       </div>
 
-      <LandingPageSection className="text-slate-800">
-        <div className="flex flex-col items-center gap-4">
-          <div className="text-3xl font-bold">Arenas</div>
-          <div>
-            As important as your army is the terrain you'll be fighting on. Arenas can range from swinging between
-            pirate ships to objectives in rooms filled with poison gas or instant death traps. Know your terrain, and
-            build your army to thrive in it. Each DM may make their own, but check out the arenas page for some
-            examples.
+      <div className="w-full py-12 bg-slate-100">
+        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+          <div className="text-3xl font-bold">Take Advantage of the Terrain</div>
+          <div className="text-lg">
+            Each battle takes place on a unique arena, each with it's own quirks, traps, and demands for your army.
+            Swing between pirate ships or claim objectives in rooms filled with poison gas. Know your terrain, and build
+            your army to thrive in it. Each DM may make their own, but check out the arenas page for some examples.
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <ArenaPreview
+              name="The Bridge"
+              description="A single bridge hangs over an abyss. Two armies stand at opposite ends. The tug of war begins."
+            />
+            <ArenaPreview
+              name="The Pirate Ship"
+              description="Three ships meet in the sea, bombarding each other with cannonfire and boarders. When the smoke clears, who will stand at the captain's wheel?"
+            />
+            <ArenaPreview
+              name="The Dungeon"
+              description="One objective floats among the lava. Another lies in a room of poison. The third is locked behind tiny winding passages. What army can take all three?"
+            />
+            <ArenaPreview
+              name="We Three Kings"
+              description="The throne of Midas protects all those who stand on it. The throne of Zeus amplifies combat inside it. The throne of Damocles slays those who claim its power."
+            />
+          </div>
+          <a href="/monster-mania/arenas" className="ml-auto text-xl text-orange-700 hover:text-red-800 transition-colors">
+            See all arenas <i className="fa-solid fa-arrow-right" />
+          </a>
+        </div>
+      </div>
+
+      <div className="w-full py-12">
+        <div className="mx-auto max-w-3xl flex gap-8">
+          <MonsterIcon
+            Icon={Succubus}
+            className="w-32 h-32 shrink-0"
+            fill='#7f1d1d' // red-900
+            style={{ animation: 'fly ease-in-out 8s infinite' }}
+          />
+          <div className="flex flex-col gap-4">
+            <div className="text-3xl font-bold">Tempted to Join the Mania?</div>
+            <div className="text-lg">
+              Check out the{' '}
+              <Link to="/monster-mania/rules" className="font-medium text-orange-700 hover:text-red-800 transition-colors">
+                full rules
+              </Link>
+              , take a closer look at some of the{' '}
+              <Link to="/monster-mania/arenas" className="font-medium text-orange-700 hover:text-red-800 transition-colors">
+                arenas
+              </Link>
+              , and then head to the{' '}
+              <Link to="/monster-mania/builder" className="font-medium text-orange-700 hover:text-red-800 transition-colors">
+                army builder
+              </Link>{' '}
+              to make the squad that you think can take down any enemy!
+            </div>
           </div>
         </div>
-      </LandingPageSection>
-      <LandingPageSection
-        className={clsx('bg-gradient-to-r', 'from-rose-500', 'to-fuchsia-500', 'text-white', 'text-lg')}
-      >
-        <div className="flex flex-col items-center gap-8">
+      </div>
+
+      <div className="w-ful py-8 bg-gradient-to-r from-red-700 to-orange-600">
+        <div className="max-w-3xl mx-auto text-white text-center text-sm flex flex-col gap-2">
           <div>
-            Ready to prove your worth to the Red Knight? Check out the{' '}
-            <StyledLandingPageLink to="">full rules</StyledLandingPageLink>, take a closer look at some of the{' '}
-            <StyledLandingPageLink to="monster-mania/arenas">arenas</StyledLandingPageLink>, and then head to the{' '}
-            <StyledLandingPageLink to="monster-mania/builder">army builder</StyledLandingPageLink> to make the squad
-            that you think can take down any enemy.
-          </div>
-          <div className="text-sm">
             <em>Monster Mania</em> is part of <em>The Crimson Contests</em>, a series of PvP games based on the 5e
             ruleset.
           </div>
+          <div>
+            Made by{' '}
+            <a href="https://twitter.com/samvbeckmann" target="_blank" className="underline">
+              Sam Beckmann
+            </a>
+            , creature art by{' '}
+            <a href="https://tabersoothart.myportfolio.com" target="_blank" className="underline">
+              Cassian Grout
+            </a>
+            . What is this? Why does it look like a SaaS landing page? Check out the{' '}
+            <Link to="/about" className="underline">
+              About page
+            </Link>
+            . ©Sam Beckmann 2022
+          </div>
         </div>
-      </LandingPageSection>
+      </div>
     </div>
   );
 }
