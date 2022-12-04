@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { MONSTER_ICON_LIST } from '../../resources/monster-icons';
 import { IconSize, MonsterIconType } from '../../types/monster-icon-types';
 import AnimatedMonsterIcon from './AnimatedMonsterIcon';
-import { TransitionGroup } from 'react-transition-group';
 
 const MONSTER_CHANGE_INTERVAL = 3_000;
 

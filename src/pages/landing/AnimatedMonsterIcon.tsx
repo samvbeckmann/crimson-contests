@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import MonsterIcon from '../../components/MonsterIcon';
 import { IconSize, MonsterIconType } from '../../types/monster-icon-types';
-import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 
 interface Props {
